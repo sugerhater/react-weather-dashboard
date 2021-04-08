@@ -1,14 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Homepage from "./pages/Homepage/index";
-const  App= (props) =>{
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from './components/Header';
+import Homepage from "./pages/Homepage";
+import ReactDOM from "react-dom";
+import { StoreProvider } from "./store/GlobalState";
 
+
+const App = () => {
   return (
+
     <Router>
-      <Route exact path= "/" component = {HomePage}/>
+      <StoreProvider>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/react-weather-dashboard" component={Homepage} />
+      </StoreProvider>
     </Router>
   )
 }
 
 
-export const App;
+export default App;
