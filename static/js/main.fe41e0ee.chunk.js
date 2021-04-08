@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-weather-dashboard"]=this["webpackJsonpreact-weather-dashboard"]||[]).push([[0],{27:function(e,t,n){"use strict";n.r(t);n(0);var r=n(14),a=n.n(r),c=n(15),s=n(1),o=n(6),d=function(){return Object(o.jsx)("div",{})},h=function(e){return Object(o.jsx)(c.a,{children:Object(o.jsx)(s.a,{exact:!0,path:"/",component:d})})};a.a.render(Object(o.jsx)(h,{}),document.getElementById("root"))}},[[27,1,2]]]);
-//# sourceMappingURL=main.fe41e0ee.chunk.js.map
