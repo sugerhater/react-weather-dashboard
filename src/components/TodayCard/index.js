@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { SET_COORD } from '../../store/actions';
 import { useStoreContext } from '../../store/GlobalState';
 import weatherAPI from "../../utils/weatherAPI";
 
 const TodayCard = (props) => {
-  const [{city}] = useStoreContext();
+  const [{city},{coord}] = useStoreContext();
+  const [state,dispatch] = useStoreContext();
   // const [ { cityInfo} ] = useStoreContext();
   // const [highTemp, setHighTemp] = useState("");
   // const [lowTemp, setLowTemp] = useState("");
@@ -11,7 +13,9 @@ const TodayCard = (props) => {
   const getCityInfo = async () => {
     const res = await weatherAPI.getWeather(city);
     setCityInfo(res);
-    console.log(res);
+    console.log(res.coord);
+    //set coord here
+    await dispatch({type:SET_COORD, payload:res.coord});
   }
 
   useEffect(() => {
@@ -35,7 +39,9 @@ const TodayCard = (props) => {
           <div class="wind">{`Wind Speed: ${(cityInfo.wind.speed * 2.236).toFixed(1)} MPH `}</div>
           <div class="UV"></div>
         </div>
-      </div>) : (<div class="card pl-3 pt-3 mb-3 bg-primary text-light">
+      </div>) : 
+      // (<div>loading...</div>)
+      (<div class="card pl-3 pt-3 mb-3 bg-primary text-light">
         <div class="card-body">
           <div class="city">{}</div>
           {/* <div class="city">{cityInfo.main.humidity}</div>

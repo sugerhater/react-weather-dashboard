@@ -15,7 +15,7 @@ const SearchCard = () => {
     <form onSubmit={handleSubmit}>
       <label for="city-input">Search for a City:</label>
       <input id="city-input" type="text" ref= {cityRef} />
-      <button className = "btn btn-secondary mt-3 mb-5" type="submit" value="search"> Search</button>
+      <button className = "btn btn-secondary " type="submit" value="search"> Search</button>
     </form>
     <div id="city-list"></div>
   </div>
