@@ -8,7 +8,7 @@ import {
 const StoreContext = createContext({
   cityInfo: {},
   city: "",
-  coord:{}
+  coord:{lat:0,lon:0}
 })
 
 const { Provider } = StoreContext;
@@ -26,7 +26,7 @@ const reducer = (state, { type, payload }) => {
     case SET_COORD:
       console.log("setting coord",payload);
       return {...state, coord:payload}
-      
+
     default:
       return state;
   }

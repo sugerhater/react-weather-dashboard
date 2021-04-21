@@ -4,11 +4,8 @@ import { useStoreContext } from '../../store/GlobalState';
 import weatherAPI from "../../utils/weatherAPI";
 
 const TodayCard = (props) => {
-  const [{city},{coord}] = useStoreContext();
+  const [{city}] = useStoreContext();
   const [state,dispatch] = useStoreContext();
-  // const [ { cityInfo} ] = useStoreContext();
-  // const [highTemp, setHighTemp] = useState("");
-  // const [lowTemp, setLowTemp] = useState("");
   const [cityInfo, setCityInfo] = useState({});
   const getCityInfo = async () => {
     const res = await weatherAPI.getWeather(city);
