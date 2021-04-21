@@ -3,7 +3,12 @@ import { SET_COORD } from '../../store/actions';
 import { useStoreContext } from '../../store/GlobalState';
 import weatherAPI from "../../utils/weatherAPI";
 
-const TodayCard = (props) => {
+const TodayCard = () => {
+  const styles = {
+    todayCard:{
+      width: "26rem"
+    }
+  }
   const [{city}] = useStoreContext();
   const [state,dispatch] = useStoreContext();
   const [cityInfo, setCityInfo] = useState({});
@@ -23,9 +28,9 @@ const TodayCard = (props) => {
 
   return (
     cityInfo.name ? (
-      <div class="card pl-3 pt-3 mb-3 bg-primary text-light mr-auto">
+      <div class="card pl-3 pt-3 mb-3 bg-primary text-light mr-auto" style={styles.todayCard}>
         <div class="card-body">
-          <div class="city">{ cityInfo.name} Today</div>
+          <h1 class="city">{ cityInfo.name} Today</h1>
           <div class="city">Humidity { cityInfo.main.humidity}%</div>
           <div class="temp">{`Temperature:
               ${(cityInfo.main.temp_min * 9 / 5 - 459.67).toFixed(1)}F /

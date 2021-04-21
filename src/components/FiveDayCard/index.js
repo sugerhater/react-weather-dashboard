@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
 const FiveDayCard = (props) => {
 
+const styles = {
+  card:{
+    width: "12rem"
+  }
+}
+
   console.log(props);
   return (
-    <div class="pl-3">
-      <div class="card pl-3 pt-3 mb-3 bg-primary text-light">
+    <div class=" float-left pl-3">
+      <div class="card pl-3 pt-3 mb-3 bg-primary text-light" style={styles.card}>
         <div className="card-body">
           <h5>{props.date}</h5>
-          {/* <p>{iconURL}</p> */}
-          {/* <p>Temp: ${info.temp} °F</p> */}
+          <p><img src={`https://openweathermap.org/img/w/${props.icon}.png`} /></p>
+          <p>Temp: {(props.temp * 9 / 5 - 459.67).toFixed(1)} °F</p>
           <p>humidity: {props.humidity}% </p>
         </div>
       </div>
