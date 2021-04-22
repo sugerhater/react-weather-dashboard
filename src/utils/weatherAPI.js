@@ -17,6 +17,8 @@ export default {
       console.log(data.daily);
 
       return data.daily;
+    }).catch(err => {
+      console.log(err)
     })
   }
 }

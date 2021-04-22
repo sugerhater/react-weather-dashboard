@@ -2,19 +2,25 @@ import React, { createContext, useContext, useReducer } from "react";
 import {
   SET_CITY_WEATHER,
   SET_CITY,
-  SET_COORD
+  SET_COORD,
+  SET_UVI
 } from "./actions";
 
 const StoreContext = createContext({
   cityInfo: {},
   city: "",
-  coord:{lat:0,lon:0}
+  coord:{lat:0,lon:0},
+  uvi:""
 })
 
 const { Provider } = StoreContext;
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
+    case SET_UVI:
+      console.log("setting uvi");
+      return {...state,uvi:payload}
+
     case SET_CITY_WEATHER:
       console.log("setting recipe", payload);
       return { ...state, cityInfo: payload }

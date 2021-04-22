@@ -6,11 +6,9 @@ const styles = {
     width: "12rem"
   }
 }
-
-  console.log(props);
   return (
-    <div class=" float-left pl-3">
-      <div class="card pl-3 pt-3 mb-3 bg-primary text-light" style={styles.card}>
+    <div className=" float-left pl-3">
+      <div className="card pl-3 pt-3 mb-3 bg-primary text-light" style={styles.card}>
         <div className="card-body">
           <h5>{props.date}</h5>
           <p><img src={`https://openweathermap.org/img/w/${props.icon}.png`} /></p>
